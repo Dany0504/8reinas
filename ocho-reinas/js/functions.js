@@ -34,7 +34,7 @@ function cellClick(celda) {
     const r = celda.parentNode.rowIndex;
     const c = celda.cellIndex;
 
-    // VALIDACIÓN: ¿Hay otra reina atacando aquí?
+    // VALIDACIÓN: Verificar si la celda está bajo ataque de otra reina
     if (estaAmenazada(r, c)) {
         alert("Posición inválida: La celda está bajo ataque de otra reina.");
         return; 
