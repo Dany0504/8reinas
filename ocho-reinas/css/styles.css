@@ -1,0 +1,69 @@
+table {
+    border-collapse: collapse;
+    width: 400px;
+    height: 400px;
+    table-layout: fixed; /* <--- ESTO ES CLAVE: evita que las columnas se muevan */
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    margin-bottom: 20px;
+}
+
+td {
+    border: 1px solid rgba(104, 72, 4, 0.3);
+    width: 50px;  /* Tamaño fijo */
+    height: 50px; /* Tamaño fijo */
+    padding: 0;
+    text-align: center;
+    vertical-align: middle;
+    overflow: hidden; /* Evita que la imagen empuje los bordes */
+}
+
+td img {
+    display: block;
+    margin: auto;
+    width: 80%;   /* Usa porcentaje para que se adapte al TD fijo */
+    height: auto;
+    pointer-events: none;
+}
+
+/* Colores por defecto de las celdas como variables*/
+:root {
+  --color-celda1: linen;
+  --color-celda2: burlywood;
+}
+
+tr:nth-child(even) td:nth-child(even),
+tr:nth-child(odd) td:nth-child(odd) {
+  background-color: var(--color-celda1);
+}
+
+tr:nth-child(odd) td:nth-child(even),
+tr:nth-child(even) td:nth-child(odd) {
+  background-color: var(--color-celda2);
+}
+
+/* Color de la línea de ataque (Requisito) */
+.atrapada {
+    background-color: #ff6b6b !important; /* Rojo suave para ataque */
+}
+
+/* Estilo para celda bloqueada (Requisito) */
+.bloqueada {
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+/* Para que la reina resalte */
+td {
+    transition: background-color 0.2s ease;
+    user-select: none; /* Evita que se seleccione el texto al dar click rápido */
+}
+
+/* Estilo para los controles (opcional, para que se vea ordenado) */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f0f0;
+    padding-top: 20px;
+}

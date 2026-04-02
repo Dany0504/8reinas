@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ocho Reinas - Daniel Montaño</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/functions.js" defer></script>
+</head>
+<body>
+
+    <h1>Problema de las Ocho Reinas</h1>
+
+    <table id="tablero">
+        <script>
+            for (let r = 0; r < 8; r++) {
+                document.write("<tr>");
+                for (let c = 0; c < 8; c++) {
+                    document.write(`<td onclick="cellClick(this)" onmouseover="cambiar(${r}, ${c})" onmouseleave="limpiar()"></td>`);
+                }
+                document.write("</tr>");
+            }
+        </script>
+    </table>
+
+    <div class="controles">
+        <div class="selector-reina">
+            <label>Seleccione su Reina:</label>
+            <select id="reinaTipo">
+                <option value="img/reina1.png">Reina Clásica</option>
+                <option value="img/reina2.png">Reina Madera</option>
+                <option value="img/reina3.png">Reina de Texto </option>
+            </select>
+        </div>
+
+        <div class="botones">
+            <button onclick="reiniciar()">Reiniciar Juego</button>
+            <button onclick="mostrarSolucion()">Mostrar Solución</button>
+        </div>
+
+        <div class="colores">
+            <label>Celda 1:</label>
+            <input type="color" id="color1" value="#f5f5dc">
+            <label>Celda 2:</label>
+            <input type="color" id="color2" value="#deb887">
+        </div>
+    </div>
+
+    <footer>
+        Realizado por: Daniel Montaño de la Torre
+    </footer>
+
+</body>
+</html>
